@@ -30,7 +30,7 @@ public:
 	void startCar() {
 		carDriving = true;
 		if (carOn == false) {
-			cout << "You started your car" << endl;
+			cout << "You have started your car and its ready to drive" << endl;
 			carOn = true;
 		}
 		else if (carOn == true) {
@@ -55,7 +55,7 @@ public:
 			if (carOn == true) {
 				while (carDriving == true && carGas > 0) {
 					cout << "What do you want to do? " << endl;
-					cout << "1 = Drive Forward" << endl << "2 = Turn Right" << endl << "3 = Turn Left" << endl << "4 = Stop driving" << endl;
+					cout << "1 = Drive Forward" << endl << "2 = Turn Right" << endl << "3 = Turn Left" << endl << "4 = Speed Up" << endl << "5 = Slow down" << endl << "6 = Stop driving" << endl;
 					cin >> y;
 					switch (y) {
 					case(1): {
@@ -74,6 +74,16 @@ public:
 						break;
 					}
 					case(4): {
+						cout << "You are speeding up.." << endl;
+						carGas--;
+						break;
+					}
+					case(5): {
+						cout << "You are slowing down.." << endl;
+						carGas--;
+						break;
+					}
+					case(6): {
 						cout << "You stopped driving" << endl;
 						carDriving = false;
 						break;
@@ -104,7 +114,7 @@ public:
 		carGas = 6;
 	}
 	void printCar() {
-		cout << "You are driving a " << color << year << make << model << endl;
+		cout << "You are driving a " << color << " " << year << " " << make << " " << model << endl;
 	}
 };
 
@@ -121,8 +131,8 @@ int main() {
 	while (keepGoing == true) {
 
 		cout << "What would you like to do?" << endl;
-		cout << "1 = Choose Year" << endl << "2 = Choose Make" << endl << "3 = Choose Model" << endl << "4 = Choose Color" << endl <<
-			"5 = Start Car" << endl << "6 = Stop Car" << endl << "7 = Print your car" << endl << "8 = Drive your car" << endl << "9 = Fill Gas Tank" << endl;
+		cout << "1 = Choose Year     2 = Choose Make" << endl << "3 = Choose Model    4 = Choose Color" << endl <<
+			"5 = Start Car       6 = Stop Car" << endl << "7 = Print your car  8 = Drive your car" << endl << "9 = Fill Gas Tank" << endl;
 
 		cin >> option;
 
